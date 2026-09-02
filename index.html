@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Driving School Project – Mural Concept</title>
+<title>Driving School Project</title>
 <style>
 :root{
   --canvas:#F3F1EC;
@@ -116,37 +116,37 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);font-si
     <div class="row"><div class="key">PK</div><div class="fld">F_STUDENTID</div><div class="typ">CHAR(36)</div></div>
     <div class="row"><div class="key"><span class="m">💣</span></div><div class="fld">NAME</div><div class="typ">VARCHAR(100)</div></div>
     <div class="row"><div class="key"><span class="m">💣</span></div><div class="fld">BIRTHDATE</div><div class="typ">DATE</div></div>
-    <div class="row"><div class="key"><span class="m">💣</span></div><div class="fld">LICENSE_CLASS</div><div class="typ">VARCHAR(36)</div></div>
+    <div class="row"><div class="key"><span class="m">💣</span></div><div class="fld">LICENSECLASS</div><div class="typ">VARCHAR(36)</div></div>
     <div class="row"><div class="key empty"></div><div class="fld">ADDRESS</div><div class="typ">VARCHAR(255)</div></div>
     <div class="row"><div class="key empty"></div><div class="fld">PHONE</div><div class="typ">VARCHAR(30)</div></div>
     <div class="row"><div class="key empty"></div><div class="fld">EMAIL</div><div class="typ">VARCHAR(100)</div></div>
-    <div class="row"><div class="key"><span class="m">💣</span></div><div class="fld">VISION_TEST_DATE</div><div class="typ">DATE</div></div>
-    <div class="row"><div class="key empty"></div><div class="fld">REGISTRATION_DATE</div><div class="typ">DATE</div></div>
+    <div class="row"><div class="key"><span class="m">💣</span></div><div class="fld">VISIONTESTDATE</div><div class="typ">DATE</div></div>
+    <div class="row"><div class="key empty"></div><div class="fld">REGISTRATIONDATE</div><div class="typ">DATE</div></div>
     <div class="row"><div class="key"><span class="m">💣</span></div><div class="fld">STATUS</div><div class="typ">VARCHAR(36)</div></div>
-    <div class="row"><div class="key empty"></div><div class="fld">THEORY_EXAM_DATE</div><div class="typ">DATETIME</div></div>
-    <div class="row"><div class="key empty"></div><div class="fld">PRACTICAL_EXAM_DATE</div><div class="typ">DATETIME</div></div>
+    <div class="row"><div class="key empty"></div><div class="fld">THEORYEXAMDATE</div><div class="typ">DATETIME</div></div>
+    <div class="row"><div class="key empty"></div><div class="fld">PRACTICALEXAMDATE</div><div class="typ">DATETIME</div></div>
     <div class="row"><div class="key empty"></div><div class="fld">DATE_NEW</div><div class="typ">DATETIME</div></div>
     <div class="row"><div class="key empty"></div><div class="fld">DATE_EDIT</div><div class="typ">DATETIME</div></div>
     <div class="row"><div class="key empty"></div><div class="fld">USER_NEW</div><div class="typ">VARCHAR(30)</div></div>
     <div class="row"><div class="key empty"></div><div class="fld">USER_EDIT</div><div class="typ">VARCHAR(30)</div></div>
-    <p class="hint">LICENSE_CLASS → Keyword VEHICLE_TYPE · STATUS → Keyword STUDENT_STATUS · both exam dates are set only by ACT_SCHEDULE_EXAM (editing via the UI in the EditView is not allowed) · DATE_NEW/DATE_EDIT/USER_NEW/USER_EDIT are the standard audit fields, maintained automatically by ADITO.</p>
+    <p class="hint">LICENSECLASS → Keyword VehicleType · STATUS → Keyword StudentStatus · both exam dates are set only by ScheduleExam_action (editing via the UI in the EditView is not allowed) · DATE_NEW/DATE_EDIT/USER_NEW/USER_EDIT are the standard audit fields, maintained automatically by ADITO.</p>
   </div>
 
   <div class="tbl red">
     <div class="cap">Context 2 · Instructor Management</div>
     <h3>F_LESSON</h3>
     <div class="row"><div class="key">PK</div><div class="fld">F_LESSONID</div><div class="typ">CHAR(36)</div></div>
-    <div class="row"><div class="key"><span class="m">💣</span></div><div class="fld">INSTRUCTOR_NAME</div><div class="typ">VARCHAR(36)</div></div>
+    <div class="row"><div class="key"><span class="m">💣</span></div><div class="fld">INSTRUCTORNAME</div><div class="typ">VARCHAR(36)</div></div>
     <div class="row"><div class="key">FK</div><div class="fld">F_STUDENT_ID</div><div class="typ">CHAR(36)</div></div>
     <div class="row"><div class="key"><span class="m">💣</span></div><div class="fld">VEHICLETYPE</div><div class="typ">VARCHAR(36)</div></div>
     <div class="row"><div class="key"><span class="m">💣</span></div><div class="fld">APPOINTMENT</div><div class="typ">DATETIME</div></div>
-    <div class="row"><div class="key"><span class="m">💣</span></div><div class="fld">DURATION_HOURS</div><div class="typ">DECIMAL(3,1)</div></div>
+    <div class="row"><div class="key"><span class="m">💣</span></div><div class="fld">DURATIONHOURS</div><div class="typ">DECIMAL(3,1)</div></div>
     <div class="row"><div class="key empty"></div><div class="fld">STATUS</div><div class="typ">VARCHAR(36)</div></div>
     <div class="row"><div class="key empty"></div><div class="fld">DATE_NEW</div><div class="typ">DATETIME</div></div>
     <div class="row"><div class="key empty"></div><div class="fld">DATE_EDIT</div><div class="typ">DATETIME</div></div>
     <div class="row"><div class="key empty"></div><div class="fld">USER_NEW</div><div class="typ">VARCHAR(30)</div></div>
     <div class="row"><div class="key empty"></div><div class="fld">USER_EDIT</div><div class="typ">VARCHAR(30)</div></div>
-    <p class="hint">One row = one driving lesson. An instructor appears in many rows, and so does a student. DURATION_HOURS defaults to 1.5 (double lesson). VEHICLETYPE here is single-value (one appointment uses exactly one vehicle) · audit fields as in F_STUDENT.</p>
+    <p class="hint">One row = one driving lesson. An instructor appears in many rows, and so does a student. DURATIONHOURS defaults to 1.5 (double lesson). VEHICLETYPE here is single-value (one appointment uses exactly one vehicle) · audit fields as in F_STUDENT.</p>
   </div>
 
 </div>
@@ -154,11 +154,11 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);font-si
 <h2>Keyword Categories</h2>
 <div class="grid g3">
   <div class="note blue">
-    <h3>1 · STUDENT_STATUS</h3>
+    <h3>1 · StudentStatus</h3>
     <span class="pill">REGISTERED</span><span class="pill">THEORY_COMPLETED</span><span class="pill">PRACTICAL_IN_PROGRESS</span><span class="pill">EXAM_PREPARED</span><span class="pill">EXAM_SCHEDULED</span><span class="pill">PASSED</span><span class="pill">WITHDRAWN</span>
   </div>
   <div class="note red">
-    <h3>2 · VEHICLE_TYPE</h3>
+    <h3>2 · VehicleType</h3>
     <p class="hint" style="margin:0 0 6px;opacity:1">Motorcycle</p>
     <span class="pill">AM</span><span class="pill">A1</span><span class="pill">A2</span><span class="pill">A</span><span class="pill">B196</span>
     <p class="hint" style="margin:10px 0 6px;opacity:1">Car</p>
@@ -168,7 +168,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);font-si
 
   </div>
   <div class="note red">
-    <h3>3 · INSTRUCTOR_NAME</h3>
+    <h3>3 · InstructorName</h3>
     <span class="pill">Meier</span><span class="pill">Schmidt</span><span class="pill">Yilmaz</span>
     <p style="margin-top:10px">Replaces an instructor table. A keyword is just a list of values, not a context or entity – new instructors are added directly by the user in the dropdown.</p>
   </div>
@@ -177,7 +177,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);font-si
 <div class="grid" style="margin-top:16px">
   <div class="note stone">
     <h3>Note: Alternative to Category 3</h3>
-    <p><code>INSTRUCTOR_NAME</code> could also be a free-text field <code>VARCHAR(50)</code> instead of a keyword category. That keeps it at exactly two categories, as in the original requirement.</p>
+    <p><code>INSTRUCTORNAME</code> could also be a free-text field <code>VARCHAR(50)</code> instead of a keyword category. That keeps it at exactly two categories, as in the original requirement.</p>
     <p style="margin-bottom:0"><strong>Price for that:</strong> Validation 2 groups by the instructor name. If someone types "Meier" once and "Maier" another time, these count as two different instructors and the 8-hour limit no longer applies correctly. With a keyword, the spelling is guaranteed to be consistent and the instructor still stays in a selection list. Recommendation: keyword.</p>
   </div>
 </div>
@@ -185,18 +185,18 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);font-si
 <h2>Validations</h2>
 <div class="grid g2">
   <div class="note blue">
-    <h3>VAL_AGE_CHECK, F_STUDENT</h3>
+    <h3>onValidation on LICENSECLASS, F_STUDENT</h3>
     <ul>
-      <li>Minimum age per <code>LICENSE_CLASS</code>:
+      <li>Minimum age per <code>LICENSECLASS</code>:
         <code>AM</code>=16 · <code>A1</code>=16 · <code>A2</code>=18 · <code>A</code>=24 · <code>B196</code>=18 · <code>B</code>=18 · <code>BE</code>=18 · <code>C1</code>=18 · <code>C1E</code>=18 · <code>C</code>=21 · <code>CE</code>=21.</li>
       <li>Runs on creation and when the class is changed.</li>
       <li>Message: "Student must be at least {AGE} years old for class {CLASS}."</li>
     </ul>
   </div>
   <div class="note red">
-    <h3>VAL_MAX_8_HOURS · onValidation, F_LESSON</h3>
+    <h3>onValidation on INSTRUCTORNAME, F_LESSON</h3>
     <ul>
-      <li><code>SUM(DURATION_HOURS)</code> of all appointments with the same <code>INSTRUCTOR_NAME</code> on the same calendar day ≤ 8.</li>
+      <li><code>SUM(DURATIONHOURS)</code> of all appointments with the same <code>INSTRUCTORNAME</code> on the same calendar day ≤ 8.</li>
       <li>Appointments with status <code>CANCELLED</code> do not count.</li>
       <li>Message: "Instructor {NAME} already has {X} of 8 hours on {DATE}. Please choose a different instructor or time slot."</li>
     </ul>
@@ -206,23 +206,23 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);font-si
 <h2>Actions</h2>
 <div class="grid g3">
   <div class="note teal">
-    <h3>ACT_SCHEDULE_EXAM</h3>
+    <h3>ScheduleExam_action</h3>
     <ul>
       <li>On F_STUDENT</li>
       <li>Checks <code>STATUS = EXAM_PREPARED</code>, otherwise error "Student is not yet ready for the exam"</li>
-      <li>Writes the date to <code>THEORY_EXAM_DATE</code>, or to <code>PRACTICAL_EXAM_DATE</code> if the theory exam has already been passed</li>
+      <li>Writes the date to <code>THEORYEXAMDATE</code>, or to <code>PRACTICALEXAMDATE</code> if the theory exam has already been passed</li>
       <li>Sets <code>STATUS = EXAM_SCHEDULED</code></li>
     </ul>
   </div>
   <div class="note teal">
-    <h3>ACT_BOOK_LESSON</h3>
+    <h3>BookLesson_action</h3>
     <ul>
       <li>On F_LESSON</li>
       <li>Shows a message dialog: total hours worked by this instructor (status ≠ CANCELLED) and the resulting earnings calculated from it (hours × hourly-rate constant)</li>
     </ul>
   </div>
   <div class="note teal">
-    <h3>ACT_CANCEL_APPOINTMENT</h3>
+    <h3>CancelAppointment_action</h3>
     <ul>
       <li>On F_LESSON</li>
       <li>Sets <code>STATUS = CANCELLED</code></li>
@@ -236,7 +236,7 @@ footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);font-si
   <div class="note yellow">
     <h3>totalCostPerStudent (No Databank Row needed!)</h3>
     <p>Not a database field. Calculated when the student record is opened and displayed read-only.</p>
-    <pre>SELECT COALESCE(SUM(DURATION_HOURS), 0) * 85 + 150 + 40
+    <pre>SELECT COALESCE(SUM(DURATIONHOURS), 0) * 85 + 150 + 40
 FROM   F_LESSON
 WHERE  F_STUDENT_ID = :currentStudent
   AND  STATUS &lt;&gt; 'CANCELLED'</pre>
@@ -260,7 +260,7 @@ WHERE  F_STUDENT_ID = :currentStudent
 
 <h2>Naming Conventions</h2>
 <div class="note stone">
-  <p style="margin-bottom:0"><code>F_</code> Driving school · <code>_ID</code> Identification number · <code>PK</code> Primary Key · <code>FK</code> Foreign Key · <code>PROC_</code> Process · <code>ACT_</code> Action · <code>VAL_</code> Validation · <code>V_</code> View</p>
+  <p style="margin-bottom:0"><code>F_</code> Driving school (table prefix) · <code>_ID</code> Foreign-key suffix · <code>PK</code> Primary Key · <code>FK</code> Foreign Key · <code>_action</code> Action suffix (CamelCase, no prefix) · <code>_view</code> View suffix · <code>_param</code> Parameter suffix · Keyword containers in CamelCase · validations get no separate name — each is just the field's own <code>onValidation.js</code></p>
 </div>
 
 <footer>
